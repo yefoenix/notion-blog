@@ -20,6 +20,8 @@ function applyTags(tags = [], children, noPTag = false, key) {
   return child
 }
 
+const CJKTester = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/g
+
 export function textBlock(text = [], noPTag = false, mainKey) {
   const children = []
   let key = 0
@@ -32,9 +34,16 @@ export function textBlock(text = [], noPTag = false, mainKey) {
     }
     children.push(applyTags(textItem[1], textItem[0], noPTag, key))
   }
+
+  const includesCJKV = Number(text.toString().match(CJKTester)?.length) > 5
+  const props: any = { key: mainKey }
+  if (includesCJKV && !noPTag) {
+    props.className = 'zh-han'
+  }
+
   return React.createElement(
     noPTag ? React.Fragment : components.p,
-    { key: mainKey },
+    props,
     ...children,
     noPTag
   )

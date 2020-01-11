@@ -15,7 +15,7 @@ export default ({ children: component, id }: { children: any; id?: any }) => {
     id = collectText(text)
       .toLowerCase()
       .replace(/\s/g, '-')
-      .replace(/[?!:]/g, '')
+      .replace(/[?!:'‘’“”]/g, '')
   }
 
   return (

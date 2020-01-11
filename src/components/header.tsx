@@ -2,37 +2,38 @@ import Link from 'next/link'
 import Head from 'next/head'
 import ExtLink from './ext-link'
 import { useRouter } from 'next/router'
-import styles from '../styles/header.module.css'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
-  { label: 'Home', page: '/' },
   { label: 'Blog', page: '/blog' },
-  { label: 'Contact', page: '/contact' },
-  { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
+  { label: 'Visual', link: 'https://works.shud.in' },
+  { label: 'About', page: '/' }
 ]
 
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
-export default ({ titlePre = '' }) => {
+export default ({ title = '', children = null }) => {
   const { pathname } = useRouter()
 
-  return (
-    <header className={styles.header}>
-      <Head>
-        <title>{titlePre ? `${titlePre} |` : ''} My Notion Blog</title>
-        <meta
-          name="description"
-          content="An example Next.js site using Notion for the blog"
-        />
-        <meta name="og:title" content="My Notion Blog" />
-        <meta property="og:image" content={ogImageUrl} />
-        <meta name="twitter:site" content="@_ijjk" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={ogImageUrl} />
-      </Head>
-      <ul>
-        {navItems.map(({ label, page, link }) => (
-          <li key={label}>
+  return <>
+    <Head>
+      <title>{title || 'Shu'}</title>
+      <meta
+        name="description"
+        content="Shu’s thoughts"
+      />
+      <meta name="og:title" content="Shu" />
+    </Head>
+    <header>
+      <div>{children}</div>
+      <nav>
+        {children ? <div>
+          <Link href={pathname.split('/').slice(0, -1).join('/')}>
+            <a>
+              Back
+            </a>
+          </Link>
+        </div> : navItems.map(({ label, page, link }) => (
+          <div key={label}>
             {page ? (
               <Link href={page}>
                 <a className={pathname === page ? 'active' : undefined}>
@@ -42,9 +43,9 @@ export default ({ titlePre = '' }) => {
             ) : (
               <ExtLink href={link}>{label}</ExtLink>
             )}
-          </li>
+          </div>
         ))}
-      </ul>
+      </nav>
     </header>
-  )
+  </>
 }
