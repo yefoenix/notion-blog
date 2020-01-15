@@ -5,7 +5,7 @@
 body {
   margin: 0;
   color: black;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   word-break: break-word;
   word-wrap: break-word;
@@ -37,7 +37,7 @@ a:focus, article a:focus {
 article {
   margin: auto;
   padding: 4rem 1rem 0;
-  max-width: 40rem;
+  max-width: 42rem;
   white-space: pre-line;
 }
 
@@ -75,6 +75,12 @@ article p {
 article blockquote {
   font-style: italic;
   margin: 1.5rem;
+}
+
+blockquote .zh-han {
+  font-style: normal;
+  font-family: Baskerville, 'Times New Roman', Times, Kai, KaiTi, 'KaiTi SC', STKaiti, cursive;
+  font-size: 1.1em;
 }
 
 article hr {
@@ -152,7 +158,7 @@ header nav div a.active {
 }
 
 footer {
-  max-width: 40rem;
+  max-width: 42rem;
   padding: 0 1rem;
   margin: 0 auto 2rem;
   font-size: .8rem;
