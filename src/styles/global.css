@@ -106,6 +106,7 @@ article a {
 
 article p a, article li a, article blockquote a{
   text-decoration: underline;
+  text-underline-position: under;
   cursor: pointer;
 }
 
@@ -161,6 +162,7 @@ header nav div {
 header nav div a {
   color: inherit;
   text-decoration: underline;
+  text-underline-position: under;
   cursor: pointer;
 }
 
