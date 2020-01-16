@@ -66,33 +66,24 @@ export default function Content({ blocks }) {
           break
         case 'image':
         case 'video': {
-          const { format = {} } = value
-          const { block_width } = format
-          const baseBlockWidth = 768
-          const roundFactor = Math.pow(10, 2)
-          // calculate percentages
-          const width = block_width
-            ? `${Math.round(
-              (block_width / baseBlockWidth) * 100 * roundFactor
-            ) / roundFactor}%`
-            : '100%'
-
+          const { format = {}, properties: { caption } } = value
+          
           const isImage = type === 'image'
           const Comp = isImage ? 'img' : 'video'
 
           toRender.push(
-            <Comp
-              key={id}
-              src={`/api/asset?assetUrl=${encodeURIComponent(
-                format.display_source as any
-              )}&blockId=${id}`}
-              controls={!isImage}
-              alt={isImage ? 'An image from Notion' : undefined}
-              loop={!isImage}
-              muted={!isImage}
-              autoPlay={!isImage}
-              style={{ width }}
-            />
+            <div className="media-container" key={id} style={{ paddingBottom: (format.block_aspect_ratio * 100) + '%' }}>
+              <Comp
+                src={`/api/asset?assetUrl=${encodeURIComponent(
+                  format.display_source as any
+                )}&blockId=${id}`}
+                controls={!isImage}
+                alt={caption ? caption.join('') : undefined}
+                loop={!isImage}
+                muted={!isImage}
+                autoPlay={!isImage}
+              />
+            </div>
           )
           break
         }

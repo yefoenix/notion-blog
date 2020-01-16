@@ -132,6 +132,18 @@ article .zh-han {
   text-decoration: none;
 }
 
+.media-container {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  margin: 1.5rem 0;
+}
+
+.media-container img, .media-container video {
+  position: absolute;
+  width: 100%;
+}
+
 header {
   display: flex;
   margin: 3rem 0px 1rem;
