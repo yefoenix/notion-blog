@@ -38,6 +38,7 @@ article {
   margin: auto;
   padding: 4rem 1rem 0;
   max-width: 42rem;
+  width: 100vw;
   white-space: pre-line;
 }
 
@@ -79,8 +80,8 @@ article blockquote {
 
 blockquote .zh-han {
   font-style: normal;
-  font-family: Baskerville, 'Times New Roman', Times, Kai, KaiTi, 'KaiTi SC', STKaiti, cursive;
-  font-size: 1.085em;
+  font-family: Baskerville, 'Times New Roman', Times, 'Zhuyin Kaiti', 'Han Kaiti', Kai, KaiTi, 'KaiTi SC', STKaiti, cursive;
+  font-size: 1.09em;
 }
 
 article hr {
@@ -111,7 +112,9 @@ article p a, article li a, article blockquote a{
 }
 
 article .zh-han {
+  word-break: break-all;
   text-align: justify;
+  hanging-punctuation: allow-end;
 }
 
 .post-list {
@@ -183,4 +186,15 @@ footer abbr {
   cursor: help;
   text-decoration: none;
   border-bottom: 1px dotted;
+}
+
+/* iOS */
+@supports (-webkit-overflow-scrolling: touch) {
+  /* missing font */
+  blockquote .zh-han {
+    color: #666;
+    font-size: 1em;
+    font-weight: 300;
+    font-family: unset;
+  }
 }
