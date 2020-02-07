@@ -51,6 +51,7 @@ export default ({ posts = [] }) => {
               <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
                 <a>{post.Page}</a>
               </Link>
+              <time>{getDateStr(post.Date)}</time>
             </p>
           )
         })}

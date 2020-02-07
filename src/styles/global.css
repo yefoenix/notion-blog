@@ -122,18 +122,25 @@ article .zh-han {
 }
 
 .post-item {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-bottom: 0;
+  clear: both;
 }
 
 .post-item a {
-  display: inline-block;
+  display: inline;
   margin-right: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   color: black;
   letter-spacing: -0.02em;
   text-decoration: none;
+}
+
+.post-item time {
+  color: #666;
+  font-size: .8rem;
+  line-height: 2em;
 }
 
 .media-container {
@@ -196,5 +203,11 @@ footer abbr {
     font-size: 1em;
     font-weight: 300;
     font-family: unset;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .post-item time {
+    float: right;
   }
 }
