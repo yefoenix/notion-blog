@@ -4,7 +4,7 @@ import ExtLink from './ext-link'
 import { useRouter } from 'next/router'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
-  { label: 'Notes', page: '/blog' },
+  { label: 'Notes', page: '/note' },
   { label: 'Blog', link: 'https://yefoenix.ws' },
   { label: 'About', page: '/' }
 ]
