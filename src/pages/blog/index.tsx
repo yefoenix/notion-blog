@@ -48,7 +48,7 @@ export default ({ posts = [] }) => {
         {posts.map(post => {
           return (
             <p className="post-item" key={post.Slug}>
-              <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
+              <Link href="/note/[slug]" as={getBlogLink(post.Slug)}>
                 <a>{post.Page}</a>
               </Link>
               <time>{getDateStr(post.Date)}</time>
