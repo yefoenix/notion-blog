@@ -18,14 +18,14 @@ export async function unstable_getStaticProps({ params: { slug } }) {
     console.log(`Failed to find post for slug: ${slug}`)
     return {
       props: {
-        redirect: '/blog',
+        redirect: '/note',
       },
       revalidate: 5,
     }
   }
   const postData = await getPageData(post.id)
   post.content = postData.blocks
-  post.Authors = ['Shu Ding']
+  post.Authors = ['yeFoenix']
 
   // const { users } = await getNotionUsers(post.Authors || [])
   // post.Authors = Object.keys(users).map(id => users[id].full_name)
