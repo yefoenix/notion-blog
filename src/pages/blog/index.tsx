@@ -42,8 +42,8 @@ export async function unstable_getStaticProps() {
 export default ({ posts = [] }) => {
   return (
     <article>
-      <h1>Thoughts</h1>
-      <Header title="Thoughts" />
+      <h1>Notes</h1>
+      <Header title="Notes" />
       <div className="post-list">
         {posts.map(post => {
           return (
