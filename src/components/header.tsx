@@ -4,8 +4,8 @@ import ExtLink from './ext-link'
 import { useRouter } from 'next/router'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
-  { label: 'Blog', page: '/blog' },
-  { label: 'Visual', link: 'https://works.shud.in' },
+  { label: 'Notes', page: '/blog' },
+  { label: 'Blog', link: 'https://yefoenix.ws' },
   { label: 'About', page: '/' }
 ]
 
@@ -16,12 +16,12 @@ export default ({ title = '', children = null }) => {
 
   return <>
     <Head>
-      <title>{title || 'Shu'}</title>
+      <title>{title || 'yeFoenix'}</title>
       <meta
         name="description"
-        content="Shu’s thoughts"
+        content="yeFoenix' Notion"
       />
-      <meta name="og:title" content="Shu" />
+      <meta name="og:title" content="yeFoenix" />
     </Head>
     <header>
       <div>{children}</div>
