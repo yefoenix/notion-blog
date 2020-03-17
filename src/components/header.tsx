@@ -4,9 +4,9 @@ import ExtLink from './ext-link'
 import { useRouter } from 'next/router'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
+  { label: 'About', page: '/' },
   { label: 'Notes', page: '/note' },
-  { label: 'Blog', link: 'https://yefoenix.ws' },
-  { label: 'About', page: '/' }
+  { label: 'Main Site / Blog', link: 'https://yefoenix.ws' }
 ]
 
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
@@ -19,7 +19,7 @@ export default ({ title = '', children = null }) => {
       <title>{title || 'yeFoenix'}</title>
       <meta
         name="description"
-        content="yeFoenix' Notion"
+        content="yeFoenix' Notebook"
       />
       <meta name="og:title" content="yeFoenix" />
     </Head>
