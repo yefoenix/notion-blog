@@ -31,7 +31,7 @@ function mapToEntry(post) {
     <entry>
       <id>${post.link}</id>
       <title>${decode(post.title)}</title>
-      <link href="${post.link}"/>
+      <link href="https://note.yefoenix.ws${post.link}"/>
       <updated>${new Date(post.date).toJSON()}</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
@@ -60,8 +60,8 @@ function createRSS(blogPosts = []) {
 
   return `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>My Blog</title>
-    <subtitle>Blog</subtitle>
+    <title>yeFoenix' Notebook</title>
+    <subtitle>野获编・拾遗记・博物志</subtitle>
     <link href="/atom" rel="self" type="application/rss+xml"/>
     <link href="/" />
     <updated>${NOW}</updated>
