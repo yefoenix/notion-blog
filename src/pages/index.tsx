@@ -22,8 +22,8 @@ export async function unstable_getStaticProps() {
 export default ({ post }) => {
   return (
     <article>
-      <h1>yeFoenix' Notion</h1>
-      <Header title="yeFoenix' Notion" />
+      <h1>yeFoenix' Notebook</h1>
+      <Header title="yeFoenix' Notebook" />
       <Content blocks={post.content || []}/>
     </article>
   )
